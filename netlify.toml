@@ -1,0 +1,17 @@
+[build]
+  ignore = "git diff --quiet HEAD^ HEAD src index.html"
+  publish = "dist/spa"
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npm run build:spa"
+
+[build.environment]
+  NODE_VERSION = "16"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
