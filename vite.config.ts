@@ -9,7 +9,7 @@ export default defineConfig({
       electron: {
         config: {
           build: {
-            outDir: 'dist/electron'
+            outDir: 'dist-electron'
           }
         }
       },
@@ -18,7 +18,7 @@ export default defineConfig({
         transformTemplate: minify(),
         config: {
           build: {
-            outDir: 'dist/ssr'
+            outDir: 'dist-ssr'
           }
         }
       }
@@ -52,7 +52,6 @@ export default defineConfig({
   },
 
   build: {
-    outDir: 'dist/spa',
     assetsDir: '_',
     rollupOptions: {
       output: {

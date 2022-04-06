@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@armonia/vite': ^0.2.2
+  '@armonia/vite': ^0.2.3
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/line-clamp': ^0.3.1
   '@tailwindcss/typography': ^0.5.2
@@ -66,7 +66,7 @@ dependencies:
   vue-router: 4.0.14_vue@3.2.31
 
 devDependencies:
-  '@armonia/vite': 0.2.2_7b9431ef7bca070c4003abde93aa4c82
+  '@armonia/vite': 0.2.3_7b9431ef7bca070c4003abde93aa4c82
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
   '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.23
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
@@ -128,8 +128,8 @@ packages:
     resolution: {integrity: sha512-sAP4LldeWNz0lNzmTird3uWfFDWWTeg6V/MsmyyLR9X1idwKBWIgt/ZvinqQldJm3LecKEs1emkbquO6PCiLVQ==}
     dev: true
 
-  /@armonia/vite/0.2.2_7b9431ef7bca070c4003abde93aa4c82:
-    resolution: {integrity: sha512-yFX7dWKR14hsa5qWlaW7qW5WArGmcTLLf0yBzDNikl3sC+H2v2jUaTKyj+a1Yzz9B9U6DHUfI8d5/ck/DCPzkw==}
+  /@armonia/vite/0.2.3_7b9431ef7bca070c4003abde93aa4c82:
+    resolution: {integrity: sha512-gtRS3gn/imz1t/d3rxtFimeIPrQFV7JcOTHxb/ajwVenD+fK+ADu5VQ4PWsP4r1xIsUJSUSDOc666G7sX3FQXw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
