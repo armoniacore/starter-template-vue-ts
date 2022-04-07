@@ -1,6 +1,13 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { armonia, minify } from '@armonia/vite'
+// @ts-ignore
+import type { render, createApp } from './src/entry-server'
+
+type Module = {
+  render: typeof render
+  createApp: typeof createApp
+}
 
 export default defineConfig({
   plugins: [
@@ -15,6 +22,30 @@ export default defineConfig({
       },
 
       ssr: {
+        async staticRender(ssr) {
+          const { render, createApp } = ssr as unknown as Module
+
+          const app = createApp()
+          const routes = app.router.getRoutes()
+          const files = []
+
+          for (const route of routes) {
+            const url = route.path
+            const req = {
+              originalUrl: url
+            }
+
+            const html = await render(req as any)
+            const id = `${url === '/' ? '/index' : url}.html`
+
+            files.push({
+              id,
+              code: html
+            })
+          }
+
+          return files
+        },
         transformTemplate: minify(),
         config: {
           build: {

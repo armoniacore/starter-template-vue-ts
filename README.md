@@ -16,6 +16,18 @@ pnpm run dev:electron
 pnpm run dev:ssr
 ```
 
+```bash
+pnpm run build:electron
+```
+
+```bash
+pnpm run build:ssr
+```
+
+```bash
+pnpm run build:ssg
+```
+
 ## Recommended IDE Setup
 
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)

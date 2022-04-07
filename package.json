@@ -11,6 +11,7 @@
     "build:spa": "vite build",
     "dev:ssr": "cross-env ARMONIA_TARGET=ssr vite",
     "build:ssr": "cross-env ARMONIA_TARGET=ssr vite build --ssr src/entry-server.ts",
+    "build:ssg": "cross-env ARMONIA_TARGET=ssg vite build --ssr src/entry-server.ts",
     "dev:electron": "cross-env ARMONIA_TARGET=electron vite",
     "build:electron": "cross-env ARMONIA_TARGET=electron vite build",
     "preview": "vite preview"
@@ -21,7 +22,7 @@
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
-    "@armonia/vite": "^0.2.3",
+    "@armonia/vite": "^0.3.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
@@ -34,7 +35,7 @@
     "autoprefixer": "^10.4.4",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
-    "electron": "^18.0.2",
+    "electron": "^18.0.3",
     "electron-builder": "^22.14.13",
     "eslint": "^8.12.0",
     "eslint-config-adjunct": "^4.11.1",
