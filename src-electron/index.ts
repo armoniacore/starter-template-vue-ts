@@ -1,5 +1,5 @@
-import { resolve } from 'path'
 import { app, BrowserWindow } from 'electron'
+import { resolve } from 'node:path'
 
 let mainWindow: BrowserWindow | undefined
 
@@ -17,17 +17,18 @@ function createWindow() {
   })
 
   if (import.meta.env.DEV) {
-    mainWindow.loadURL(import.meta.env.ELECTRON_APP_URL)
+    void mainWindow.loadURL(import.meta.env.ELECTRON_APP_URL)
     mainWindow.webContents.openDevTools()
   } else {
-    mainWindow.webContents.on('did-finish-load', function () {
+    mainWindow.webContents.on('did-finish-load', () => {
       mainWindow.show()
     })
 
-    mainWindow.loadFile(import.meta.env.ELECTRON_APP_URL)
     mainWindow.webContents.on('devtools-opened', () => {
       mainWindow.webContents.closeDevTools()
     })
+
+    void mainWindow.loadFile(import.meta.env.ELECTRON_APP_URL)
   }
 
   mainWindow.on('closed', () => {
@@ -35,7 +36,7 @@ function createWindow() {
   })
 }
 
-app.whenReady().then(createWindow)
+void app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

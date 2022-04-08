@@ -5,6 +5,7 @@ import type { Request } from 'express'
 import manifest from 'ssr:manifest'
 import template from 'ssr:template'
 
+// @ts-ignore
 import { createApp } from './main'
 
 // export createApp

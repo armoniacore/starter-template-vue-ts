@@ -17,7 +17,7 @@ module.exports = defineConfig({
     // Needed to make the parser take into account 'vue' files
     extraFileExtensions: ['.vue'],
     parser: '@typescript-eslint/parser',
-    project: resolve(__dirname, './tsconfig.json'),
+    project: [resolve(__dirname, './tsconfig.json'), resolve(__dirname, './tsconfig.node.json')],
     tsconfigRootDir: __dirname,
     ecmaVersion: 2021, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module' // Allows for the use of imports
@@ -107,5 +107,20 @@ module.exports = defineConfig({
         ignoreHTMLAttributeValues: true
       }
     ]
-  }
+  },
+
+  overrides: [
+    {
+      files: ['src/entry-server.ts'],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'off'
+      }
+    },
+    {
+      files: ['src-electron/index.ts'],
+      rules: {
+        'unicorn/prefer-module': 'off'
+      }
+    }
+  ]
 })

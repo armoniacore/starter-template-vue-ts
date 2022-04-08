@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "lint": "eslint src/**/*.{ts,vue}",
+    "lint": "eslint src/**/*.{ts,vue} src-electron/**/*.{ts,vue}",
     "build:all": "run-s build:*",
     "dev": "npm run dev:spa",
     "build": "npm run build:spa",

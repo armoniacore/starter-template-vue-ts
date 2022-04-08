@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { armonia, minify } from '@armonia/vite'
-// @ts-ignore
 import type { render, createApp } from './src/entry-server'
 
 type Module = {

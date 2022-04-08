@@ -4,5 +4,5 @@
     "module": "esnext",
     "moduleResolution": "node"
   },
-  "include": ["src-electron/**/*.ts", "src-electron/**/*.d.ts", "vite.config.ts"]
+  "include": ["src-electron/**/*.ts", "src-electron/**/*.d.ts", "src/entry-server.ts", "src/**/*.d.ts", "vite.config.ts"]
 }
