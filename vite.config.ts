@@ -13,14 +13,19 @@ export default defineConfig({
     vue(),
     armonia({
       electron: {
-        config: {
-          build: {
-            outDir: 'dist-electron'
-          }
+        config: { build: { outDir: 'dist-electron' } },
+        transformPackageJson(pkg) {
+          delete pkg.dependencies
         }
       },
 
       ssr: {
+        config: { build: { outDir: 'dist-ssr' } },
+        transformTemplate: minify()
+      },
+
+      ssg: {
+        config: { build: { outDir: 'dist-ssg' } },
         async staticRender(ssr) {
           const { render, createApp } = ssr as unknown as Module
 
@@ -44,12 +49,6 @@ export default defineConfig({
           }
 
           return files
-        },
-        transformTemplate: minify(),
-        config: {
-          build: {
-            outDir: 'dist-ssr'
-          }
         }
       }
     })
