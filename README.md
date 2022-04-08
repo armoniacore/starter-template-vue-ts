@@ -1,6 +1,6 @@
-# Vite + Tailwind + Electron + SSR
+# Vite + Tailwind + Electron + SSR + SSG
 
-Vite template to get start building cross target applications in electron, SSR and tailwind.
+Vite template to get start building cross target applications in electron, SSR, SSG and tailwind.
 
 Install and run with:
 
