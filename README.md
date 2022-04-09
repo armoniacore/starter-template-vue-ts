@@ -1,42 +1,61 @@
 # Vite + Tailwind + Electron + SSR + SSG
 
-Vite template to get start building cross target applications in electron, SSR, SSG and tailwind.
+## Quick Start
 
-Install and run with:
-
-```bash
-pnpm i
-```
+Make sure to have [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/) installed on your machine, then run:
 
 ```bash
-pnpm run dev:electron
+# Clone this repository
+$ git clone https://github.com/armoniacore/starter-template-vue-ts my-project
+
+# Go into the repository
+$ cd my-project
+
+# Install dependencies
+$ pnpm install
+
+# Run the app in ssr
+$ pnpm dev:ssr
+
+# Run the app in electron
+$ pnpm i electron electron-builder -D
+$ pnpm dev:electron
 ```
+
+Note: You can use your preferred package manager such as `yarn` or `npm`, however, make sure to read the [notes for electron-builder](#note-for-electron-builder).
+
+## References
+
+This template project uses:
+
+- [Electron](http://electron.atom.io/)
+- [Electron Builder](https://www.electron.build/)
+- [Electron Packager](https://github.com/electron/electron-packager)
+- [Vite](https://vitejs.dev/)
+
+## Note for Electron-Builder
+
+If you are using `pnpm` with `electron-builder`, make sure to adjust your `.npmrc` as noted in the official `electron-builder` [documentation](https://www.electron.build/index.html#note-for-pnpm), or use another package manager such as `yarn`.
+
+```txt
+// pick one of these
+node-linker=hoisted
+public-hoist-pattern=*
+shamefully-hoist=true
+```
+
+Follow the ref: [#6389](https://github.com/electron-userland/electron-builder/issues/6289#issuecomment-1042620422) to explore more about this issue.
+
+## Vite vue-ts Starter Template
+
+This project has been initialized from the official vite template [vue-ts](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-vue-ts)
 
 ```bash
-pnpm run dev:ssr
+$ pnpm create vite starter-template-vue-ts -- --template vue-ts
 ```
 
-```bash
-pnpm run build:electron
-```
+So make sure to read the [vue-ts readme](https://github.com/vitejs/vite/blob/main/packages/create-vite/template-vue-ts/README.md) if you want to explore more about this starter template.
 
-```bash
-pnpm run build:ssr
-```
+---
 
-```bash
-pnpm run build:ssg
-```
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
-
-1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+> [armonia](https://github.com/armoniacore/armonia-vite)
