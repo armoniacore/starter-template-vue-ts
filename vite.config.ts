@@ -8,7 +8,7 @@ type Module = {
   createApp: typeof createApp
 }
 
-export default defineConfig({
+export default defineConfig((env) => ({
   plugins: [
     vue(),
     armonia({
@@ -21,7 +21,7 @@ export default defineConfig({
 
       ssr: {
         config: { build: { outDir: 'dist-ssr' } },
-        transformTemplate: minify()
+        transformTemplate: env.mode === 'production' ? minify() : undefined
       },
 
       ssg: {
@@ -97,4 +97,4 @@ export default defineConfig({
       }
     }
   }
-})
+}))
