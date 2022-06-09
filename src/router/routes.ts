@@ -1,16 +1,21 @@
 import type { RouteRecordRaw } from 'vue-router'
 
 import Index from '../pages/IndexPage.vue'
-import Tailwind from '../pages/TailwindPage.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
+    name: 'Index',
     component: Index
   },
   {
     path: '/tailwind',
-    component: Tailwind
+    component: () => import('../pages/TailwindPage.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    redirect: '/'
   }
 ]
 
